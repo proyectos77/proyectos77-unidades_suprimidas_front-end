@@ -1,0 +1,34 @@
+.contenedorFormularioLogin{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../../assets/imagenes/pagina/fondoLogin.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-form{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.formulario{
+    width: 50%;
+    border: solid .5px black;
+    padding: 5rem 5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    background-color: rgba(158, 158, 158, 0.589);
+
+}
+
+.formulario__boton{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0 !important;
+    gap: 2rem;
+}
