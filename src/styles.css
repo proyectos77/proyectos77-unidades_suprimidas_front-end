@@ -18,6 +18,10 @@ html {
 body{
     font-size: 1.6rem !important;
     height: 100%;
+    /* background-image: url(../public/imagenes/pagina/banner2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; */
 }
 
 /***********************************************************
@@ -28,6 +32,10 @@ body{
 :root {
     --shadow: 0px 3px 3px 4px rgba(112, 112, 112, 0.4);
     --gris: #969696;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --verdePrincipal: #6b8e23;
+    --verdePrincipalOscuro: #3e5315;
 }
 
 /***********************************************************
@@ -48,6 +56,11 @@ h2{
     margin-bottom: 2rem;
 }
 
+h3{
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
 .btn{
     font-size: 1.6rem;
 }
@@ -59,4 +72,24 @@ input{
 image{
     width: 100%;
     height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: var(--verdePrincipal);
+    border-color: unset !important;
+}
+
+.btn-primary:hover{
+    background-color: var(--verdePrincipalOscuro);
+    color: var(--blanco);
+    color: var(--blaco);
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
 }
