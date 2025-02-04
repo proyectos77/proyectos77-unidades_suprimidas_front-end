@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './registro-usuarios.component.html',
   styleUrl: './registro-usuarios.component.css'
 })
-export class RegistroUsuariosComponent {
-
+export default class RegistroUsuariosComponent {
+    datapantalla: string = 'Registro usuarios';
 }
