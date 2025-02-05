@@ -1,0 +1,33 @@
+.header{
+    background-image: url(../../../../../public/imagenes/pagina/fondoLogin.png);
+    height: 20rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.header__texto{
+
+}
+
+.header__opcion{
+    margin-right: 10rem;
+}
+
+.header__opcion-btn{
+    background-color: unset !important;
+    border: unset !important;
+
+}
+
+.header__opcion-btn i{
+    color: var(--blanco) !important;
+}
+
+.header__opcion-btn:hover{
+   cursor: pointer !important;
+}
