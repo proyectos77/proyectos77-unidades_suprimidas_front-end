@@ -61,8 +61,11 @@ h3{
     font-weight: 700;
     margin-top: 2rem;
 }
+
 .btn{
     font-size: 1.6rem;
+    border: unset;
+    border-radius: .5rem;
 }
 
 input{
@@ -97,4 +100,22 @@ ul{
 .form-control{
     font-size:  1.6rem !important;
     padding: 1rem;
+}
+
+
+/***********************************************************
+
+        ************ ESTILOS PARA LAS CARD DE CADA PAGINA **********
+
+************************************************************/
+.cardContenido{
+    height: 55rem;
+}
+
+.card-header-paddin{
+    padding: 1rem 2rem;
+}
+
+.card-body-page{
+   padding: 6rem 4rem;
 }
