@@ -1,0 +1,18 @@
+.formulario-usaruios{
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+}
+
+.formulario-usuarios__input{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.formulario-usuario__btn{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,43 @@
+
+<div class="card cardContenido" >
+  <div class="card-header card-header-paddin d-flex justify-content-between align-items-center">
+      <h3>Listado Usuarios</h3>
+      <div class="content-button d-flex justify-content-end align-items-center">
+          <button type="button" class="btn btn-primary" [routerLink]="['registroUsuarios']">Crear Usuario</button>
+      </div>
+  </div>
+  <div class="card-body card-body-page">
+      <div class="table-usuarios">
+          <table class="table table-hover table-usuarios__tabla" >
+              <thead class="text-center table-dark">
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Identificacion</th>
+                      <th>Usuario</th>
+                      <th>Email</th>
+                      <th>Cargo</th>
+                      <th>Tipo Usuario</th>
+                      <th>Estado</th>
+                      <th>OP</th>
+                  </tr>
+              </thead>
+              <tbody class="text-center">
+                  <tr *ngFor = "let usuarios of datos.data">
+                      <td>{{ usuarios.id }}</td>
+                      <td>{{ usuarios.nombre }}</td>
+                      <td>{{ usuarios.identificacion }}</td>
+                      <td>{{ usuarios.usuario }}</td>
+                      <td>{{ usuarios.email }}</td>
+                      <td>{{ usuarios.cargo }}</td>
+                      <td>{{ usuarios.tipoUsuario }}</td>
+                      <td>{{ usuarios.estado }}</td>
+                      <td>{{ usuarios.id }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
