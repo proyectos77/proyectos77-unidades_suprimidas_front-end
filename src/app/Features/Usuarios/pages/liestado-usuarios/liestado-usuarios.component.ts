@@ -3,6 +3,8 @@ import { GetAllUsuarios } from '../../interfaces/get-all-usuarios';
 import { UsuariosServicesService } from '../../services/usuarios-services.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { DatumTipoUsuarios, GetAllTiposUsuarios } from '../../interfaces/get-all-tipos-usuarios';
+import { TiposUsuariosService } from '../../services/tipos-usuarios.service';
 
 @Component({
   selector: 'app-liestado-usuarios',
@@ -14,7 +16,6 @@ export default class LiestadoUsuariosComponent implements OnInit{
 
 
     public datos: GetAllUsuarios = {
-
         "statusCode": 0,
         "titulo": '',
         "mensaje": '',
@@ -22,7 +23,15 @@ export default class LiestadoUsuariosComponent implements OnInit{
         "data": []
     }
 
-    constructor(private httpUsuarios: UsuariosServicesService){}
+    public tipoUsuario: GetAllTiposUsuarios = {
+        'statusCode': 0,
+        'titulo': '',
+        'mensaje': '',
+        'icono': '',
+        'data': []
+    }
+
+    constructor(private httpUsuarios: UsuariosServicesService, private httpTipoUsuarios: TiposUsuariosService){}
 
     ngOnInit(): void {
         this.listadoUsuarios();
@@ -33,9 +42,10 @@ export default class LiestadoUsuariosComponent implements OnInit{
             if (usuarios.statusCode == 200) {
                 this.datos = usuarios;
             }
-
         })
     }
+
+
 
     /* listarUsuarios():void{
         if (this.data.data.length > 0) {

@@ -10,12 +10,21 @@
           <div class="formulario-usuarios__input">
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
             <input type="text" class="form-control" name="identificacion" id="identificacion" placeholder="identificacion">
+            <input type="text" class="form-control" name="user" id="user" placeholder="usuario">
             <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-            <input type="text" class="form-control" name="usuarios" id="usuarios" placeholder="usuarios">
+            <select name="" id="" class="form-select">
+                <option value="" selected disabled>Tipo Usuario</option>
+                <option *ngFor="let tipos of tipoUsuario.data" value="{{ tipos.id }}" >{{ tipos.nombre }}</option>
+            </select>
+            <select name="" id="" class="form-select">
+              <option value="" selected disabled>Cargo</option>
+              <option *ngFor="let cargos of cargos.data" value="{{ cargos.id }}">{{ cargos.nombre }}</option>
+          </select>
           </div>
 
           <div class="formulario-usuario__btn">
-              <button type="button" class="btn btn-primary">Registrar</button>
+              <button type="button" class="btn btn-primary">Crear Usuario</button>
+              <button type="button" class="btn btn-secondary">Limpiar</button>
           </div>
       </form>
   </div>
