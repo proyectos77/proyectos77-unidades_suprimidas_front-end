@@ -102,6 +102,29 @@ ul{
     padding: 1rem;
 }
 
+.form-select{
+    font-size: 1.6rem !important;
+}
+
+.swal2-html-container{
+    font-size: 1.6rem !important;
+}
+
+.swal2-title{
+    font-size: 3.4rem;
+}
+
+.swal2-modal{
+    width: 35%;
+}
+
+.swal2-styled{
+    font-size: 1.3rem;
+}
+
+.swal2-icon{
+    font-size: 1.2rem;
+}
 
 /***********************************************************
 

@@ -9,6 +9,6 @@ export const routes: Routes = [
 
       /* {path: '', loadComponent: () => import('./features/Usuarios/page/usuarios/usuarios.component')} */
 
-      {path: 'usuarios', loadChildren: () => import('./features/Usuarios/usuarios.routes')},
+      {path: 'usuarios', loadChildren: () => import('./Features/Usuarios/usuarios.routes')},
       {path: '**', redirectTo: 'usuarios', pathMatch:'full'}
 ];
