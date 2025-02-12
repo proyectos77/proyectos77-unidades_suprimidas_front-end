@@ -3,11 +3,11 @@ export interface GetAllUsuarios {
     titulo:     string;
     mensaje:    string;
     icono:      string;
-    data:       Datum[];
+    data:       DatumUsuario[];
 }
 
 
-export interface Datum {
+export interface DatumUsuario {
     id:             number;
     nombre:         string;
     identificacion: number;
