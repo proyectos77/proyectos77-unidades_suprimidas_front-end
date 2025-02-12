@@ -1,0 +1,115 @@
+<div class="card cardContenido" >
+  <div class="card-header card-header-paddin d-flex justify-content-between align-items-center">
+    <h3>Registro Usuarios</h3>
+    <div class="content-button d-flex justify-content-end align-items-center">
+        <button type="button" class="btn btn-primary" [routerLink]="['/']">Lista Usuarios</button>
+    </div>
+</div>
+  <div class="card-body card-body-page">
+      <form  class="formulario-usaruios formularios" [formGroup]="formulario" (ngSubmit)="validarFormulario()">
+
+          <div class="formularios__texto">
+              <p>Diligenciar todos los campos obligatorios marcados con un <span style="color: red;">*</span> </p>
+          </div>
+
+          <div class="formulario-usuarios__input">
+              <div>
+                  <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+
+                  @if (this.formulario.get('nombre')?.touched && this.formulario.get('nombre')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo Nombre</small>
+                      </div>
+
+                  }
+
+                  @if (this.formulario.get('nombre')?.touched && this.formulario.get('nombre')?.errors?.['validarSoloLetras']){
+                      <div class="invalid-feedback" style="display: block;">
+                        <small class="text-danger">El campos Nombre solo acepta letras</small>
+                      </div>
+                  }
+
+              </div>
+
+              <div>
+                  <input type="text" class="form-control" formControlName="identificacion" placeholder="Identificacion *">
+
+                  @if ((this.formulario.get('identificacion')?.touched || this.formulario.get('identificacion')?.dirty)&& this.formulario.get('identificacion')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo iIentificacion</small>
+                      </div>
+
+                  }
+
+                  @if ((this.formulario.get('identificacion')?.touched || this.formulario.get('identificacion')?.dirty)&& this.formulario.get('identificacion')?.errors?.['validarSoloNumeros']){
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">El campos Identificacion solo acepta numeros </small>
+                      </div>
+                  }
+
+              </div>
+
+              <div>
+                  <input type="text" class="form-control" formControlName="user" placeholder="Usuario *">
+
+                  @if ((this.formulario.get('user')?.touched || this.formulario.get('user')?.dirty)&& this.formulario.get('user')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo Usuario</small>
+                      </div>
+                  }
+
+              </div>
+
+              <div>
+                  <input type="email" class="form-control" formControlName="emailUsuario" placeholder="Email *">
+
+                  @if ((this.formulario.get('emailUsuario')?.touched || this.formulario.get('emailUsuario')?.dirty)&& this.formulario.get('emailUsuario')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo Email</small>
+                      </div>
+                  }
+
+                  @if ((this.formulario.get('emailUsuario')?.touched || this.formulario.get('emailUsuario')?.dirty)&& this.formulario.get('emailUsuario')?.errors?.['email']){
+                      <div class="invalid-feedback" style="display: block;">
+                        <small class="text-danger">El email no tiene el formato adecuado</small>
+                      </div>
+                  }
+              </div>
+
+              <div>
+                  <select formControlName="tipoUsuario" class="form-select" >
+                      <option value="" selected disabled>Tipo Usuario *</option>
+                      <option *ngFor="let tipos of tipoUsuario.data" value="{{ tipos.id }}" >{{ tipos.nombre }}</option>
+                  </select>
+
+                  @if (this.formulario.get('tipoUsuario')?.touched && this.formulario.get('tipoUsuario')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo Tipo usuario</small>
+                      </div>
+                  }
+
+              </div>
+
+              <div>
+                  <select formControlName="cargo" class="form-select">
+                      <option value="" selected disabled>Cargo *</option>
+                      <option *ngFor="let cargos of cargos.data" value="{{ cargos.id }}">{{ cargos.nombre }}</option>
+                  </select>
+
+                  @if (this.formulario.get('cargo')?.touched && this.formulario.get('cargo')?.errors?.['required']) {
+                      <div class="invalid-feedback" style="display: block;">
+                          <small class="text-danger">Es necesario el cmapo cargo</small>
+                      </div>
+                  }
+              </div>
+          </div>
+
+          <div class="formulario-usuario__btn">
+              <button type="submit" class="btn btn-primary">Crear Usuario</button>
+              <button type="button" class="btn btn-secondary" (click)="limpiar()">Limpiar</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+

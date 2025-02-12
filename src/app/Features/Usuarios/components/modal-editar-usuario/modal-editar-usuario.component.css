@@ -1,0 +1,10 @@
+.formulario-editar-usuario{
+    padding: 2rem;
+}
+
+.formulario-editar__campos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}

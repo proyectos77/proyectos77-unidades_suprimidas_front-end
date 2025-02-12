@@ -8,7 +8,7 @@
   </div>
   <div class="card-body card-body-page">
       <div class="table-usuarios">
-          <table class="table table-hover table-usuarios__tabla" >
+          <table class="table table-hover table-usuarios__tabla table-responsive table-bordered" >
               <thead class="text-center table-dark">
                   <tr>
                       <th>ID</th>
@@ -32,12 +32,19 @@
                       <td>{{ usuarios.cargo }}</td>
                       <td>{{ usuarios.tipoUsuario }}</td>
                       <td>{{ usuarios.estado }}</td>
-                      <td>{{ usuarios.id }}</td>
+                      <td>
+                        <button type="button" class="btn btn-primary" style="margin-right: 1rem;" (click)="openModal(usuarios)"> <i class="fas fa-pen fa-lg fa-fw"></i> </button>
+                        <button type="button" class="btn btn-secondary"> <i class="fas fa-minus-circle fa-lg fa-fw"></i> </button>
+                      </td>
                   </tr>
               </tbody>
           </table>
       </div>
   </div>
 </div>
+
+
+
+  <app-modal-editar-usuario *ngIf="usuario" [usuario]="usuario"></app-modal-editar-usuario>
 
 
