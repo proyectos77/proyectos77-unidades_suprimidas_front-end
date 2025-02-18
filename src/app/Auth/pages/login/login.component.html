@@ -1,9 +1,47 @@
 <div class="contenedorFormularioLogin">
 
-    <div class="container content-form">
-        <form class="formulario">
+    <div class="content-banner-login">
 
-            <div class="formulario__icono">
+    </div>
+
+    <div class="content-form">
+        <form class="formulario" [formGroup]="loginForm">
+
+            <div class="formulario__titulo">
+                <h2>UNIDADES SUPRIMIDAS</h2>
+            </div>
+
+            <div class="formulario__input">
+                <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+
+                @if (this.loginForm.get('usuario')?.touched && this.loginForm.get('usuario')?.errors?.['required']) {
+                    <div class="invalid-feeback" style="display: block;">
+                        <small class="text-danger">El campo usuario es obligatorio.</small>
+                    </div>
+                }
+
+            </div>
+
+            <div class="formulario__input">
+                <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+
+                @if (this.loginForm.get('password')?.touched && this.loginForm.get('password')?.errors?.['required']) {
+                    <div class="invalid-feeback" style="display: block;">
+                        <small class="text-danger">El campo contraseña es obligatorio.</small>
+                    </div>
+                }
+
+            </div>
+
+            <div class="formulario__restarurar-pass d-flex justify-content-end mb-5">
+                <a href="#">Restaurar contraseña</a>
+            </div>
+
+            <div class="formulario__btn d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" (click)="validarForm()">Iniciar Sesion</button>
+            </div>
+
+           <!--  <div class="formulario__icono">
                 <img src="imagenes/pagina/icono_login.png" alt="">
             </div>
 
@@ -24,7 +62,7 @@
             <div class="formulario__boton">
                 <button type="button" class="btn btn-primary">Inicier Sesion</button>
 
-            </div>
+            </div> -->
 
         </form>
     </div>
