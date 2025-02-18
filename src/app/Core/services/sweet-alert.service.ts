@@ -14,4 +14,14 @@ export class SweetAlertService {
           text:   mensaje
       });
     }
+
+    alertaLogin(title: string){
+        Swal.fire({
+            title: title,
+            icon: "success",
+            draggable: true
+        }).then((result){
+
+        });
+    }
 }

@@ -1,4 +1,4 @@
 export interface SetLogin {
-    'usuario':     string,
-    'password': string
+    'user_usuario':     string,
+    'password_usuario': string
 }

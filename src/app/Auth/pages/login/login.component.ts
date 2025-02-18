@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { SweetAlertService } from '../../../Core/services/sweet-alert.service';
 import { SetLogin } from '../../interfaces/set-login';
 import { log } from 'console';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export default class LoginComponent implements OnInit{
 
     constructor(
         private formBuilder: FormBuilder,
-        private sweet: SweetAlertService
+        private sweet: SweetAlertService,
+        private httpLogin: LoginService
     ){}
 
     ngOnInit(): void {
@@ -25,8 +27,8 @@ export default class LoginComponent implements OnInit{
 
     formularioSesion():FormGroup{
         return this.formBuilder.group({
-            usuario: ['', [Validators.required]],
-            password: ['', [Validators.required]]
+            user_usuario: ['', [Validators.required]],
+            password_usuario: ['', [Validators.required]]
         })
     }
 
@@ -50,8 +52,13 @@ export default class LoginComponent implements OnInit{
     }
 
     iniciarSesion(data: SetLogin):void{
-        console.log(data);
+        this.httpLogin.login(data).subscribe(login  => {
+            if (login.accessToken) {
+                this.sweet.alertaLogin(login.mensaje);
+                
+            }
 
+        });
     }
 
 }
