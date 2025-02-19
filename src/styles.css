@@ -34,9 +34,9 @@ body{
     --gris: #969696;
     --blanco: #ffffff;
     --negro: #000000;
-    --verdePrincipal: #3d523d;
+    --verdePrincipal: #1c5e1c;
     --verdePrincipalOscuro: #3e5315;
-
+    --negroTrasparente: #00000065;
     --titulos: "Kanit", serif;
 }
 

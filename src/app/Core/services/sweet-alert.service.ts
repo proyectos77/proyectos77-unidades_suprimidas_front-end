@@ -20,8 +20,6 @@ export class SweetAlertService {
             title: title,
             icon: "success",
             draggable: true
-        }).then((result){
-
         });
     }
 }

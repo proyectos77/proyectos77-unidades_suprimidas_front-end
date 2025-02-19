@@ -17,13 +17,14 @@
     height: 60vh;
     width: 40%;
     /* background-image: url(../../../../../public/imagenes/pagina/escudo.png); */
-    background-color: var(--verdePrincipal);
+    background-color: var(--negroTrasparente);
+
     text-align: center;
 
 }
 
 .content-banner-login img{
-    width: 50%;
+    width: 100%;
 }
 .content-form{
     width: 40%;
@@ -39,7 +40,7 @@
     width: 100%;
     border: solid .5px black;
     padding: 0 5rem;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     height: 100%;
     display: flex;
     flex-direction: column;

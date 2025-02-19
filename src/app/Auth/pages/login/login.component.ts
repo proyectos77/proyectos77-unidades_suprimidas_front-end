@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SweetAlertService } from '../../../Core/services/sweet-alert.service';
 import { SetLogin } from '../../interfaces/set-login';
-import { log } from 'console';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +18,13 @@ export default class LoginComponent implements OnInit{
     constructor(
         private formBuilder: FormBuilder,
         private sweet: SweetAlertService,
-        private httpLogin: LoginService
+        private httpLogin: LoginService,
+        private router: Router
     ){}
 
     ngOnInit(): void {
         this.loginForm = this.formularioSesion();
+        this.cerrarSessiones();
     }
 
     formularioSesion():FormGroup{
@@ -55,10 +57,20 @@ export default class LoginComponent implements OnInit{
         this.httpLogin.login(data).subscribe(login  => {
             if (login.accessToken) {
                 this.sweet.alertaLogin(login.mensaje);
-                
+                this.router.navigateByUrl('/main');
             }
 
         });
+    }
+
+    cerrarSessiones():void{
+        const token = this.httpLogin.getToken();
+
+        if (token) {
+            this.httpLogin.cerrarSesion().subscribe(cerrar => {
+                console.log(cerrar);
+            })
+        }
     }
 
 }
