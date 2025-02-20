@@ -138,13 +138,18 @@ ul{
     font-size: 1.2rem;
 }
 
+.dropdown-item{
+    font-size: 1rem;
+}
+
 /***********************************************************
 
         ************ ESTILOS PARA LAS CARD DE CADA PAGINA **********
 
 ************************************************************/
 .cardContenido{
-    height: 55rem;
+    height: 100%;
+    /* border-radius: 1rem; */
 }
 
 .card-header-paddin{
@@ -152,5 +157,5 @@ ul{
 }
 
 .card-body-page{
-   padding: 6rem 4rem;
+   padding: 2rem 4rem;
 }

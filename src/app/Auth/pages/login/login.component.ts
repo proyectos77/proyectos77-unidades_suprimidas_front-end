@@ -4,6 +4,7 @@ import { SweetAlertService } from '../../../Core/services/sweet-alert.service';
 import { SetLogin } from '../../interfaces/set-login';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { log } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -66,9 +67,9 @@ export default class LoginComponent implements OnInit{
     cerrarSessiones():void{
         const token = this.httpLogin.getToken();
 
-        if (token) {
+        if (token && token.trim() !== '') {
             this.httpLogin.cerrarSesion().subscribe(cerrar => {
-                console.log(cerrar);
+                this.httpLogin.limpiarSesion();
             })
         }
     }

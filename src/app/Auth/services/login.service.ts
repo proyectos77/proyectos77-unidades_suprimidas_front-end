@@ -29,17 +29,23 @@ export class LoginService {
         sessionStorage.setItem('usuario', JSON.stringify(user));
     }
 
-    getToken():string{
-        return sessionStorage.getItem('token') || '';
-    }
+    getToken(): string | null {
+      if (typeof sessionStorage !== 'undefined') {
+          return sessionStorage.getItem('token');
+      }
+      return null;
+  }
 
     logueado():boolean{
         return !!this.getToken();
     }
 
     cerrarSesion():Observable<SetLogout>{
-        /* sessionStorage.removeItem('token');
-        sessionStorage.removeItem('usuario'); */
         return this.loginHttp.get<SetLogout>(this.urlLogout);
+    }
+
+    limpiarSesion():void{
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('usuario');
     }
 }
